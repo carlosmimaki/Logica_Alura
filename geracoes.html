@@ -1,0 +1,46 @@
+
+<meta charset="utf-8">
+
+
+<script>
+var geracao1 = 1528
+var geracao2 = 2020
+var geracoes = ((geracao2 - geracao1) / 28)
+
+function pulalinha()
+	{
+		document.write("<br>");
+	}
+
+function mostra(frase)
+		{
+			document.write(frase);
+			pulalinha();
+		}
+
+	mostra("Desde 1500 até 2020, passaram-se " + Math.round(geracoes) + " gerações");
+	pulalinha();
+
+</script>
+
+<!-- sugestão de resolução do instrutor -->
+
+<meta charset="UTF-8">
+
+    <script>
+        function pulaLinha() {
+            document.write("<br>");
+        }
+
+        function mostra(frase) {
+            document.write(frase);
+            pulaLinha();
+        }
+
+        var idadeMediaQuandoTemFilhos = 28;
+        var anoAtual = 2016; 
+
+        var quantidadeDeGeracoes = (anoAtual - 1500) / idadeMediaQuandoTemFilhos;
+
+        mostra(quantidadeDeGeracoes);
+    </script>

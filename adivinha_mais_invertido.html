@@ -1,0 +1,128 @@
+<meta charset="UTF-8">
+
+<script>
+	// FUNÇÃO DE QUEBRA DE LINHA
+	function jump() {
+
+		document.write("<br>");	
+		document.write("<br>");	
+	}
+    // FUNÇÃO DE EXIBIR TEXTO
+	function text(x) {
+
+		document.write(x);
+		jump();
+	}
+
+//JOGO DE ADIVINHAÇÃO
+var nome = prompt("Olá. Qual o seu nome? ");
+
+alert("Prazer em conhecê-lo, " + nome + ". Meu nome é Browser. Estou um pouco entediado... Vamos jogar um jogo?");
+alert("Pense em um número entre 1 e 10. Eu tenho 5 tentativas para tentar adivinhar em qual número você pensou.");
+alert("Já pensou, né? Certo. Agora vou tentar adivinhar. Vou fazer perguntas e você só pode responder sim (1) ou não (0).");
+alert("Se você responder qualquer número diferente desses dois, vou interpretar como se fosse um NÃO. Ok?! Vamos lá!!!");
+
+// 1º PERGUNTA
+var pergunta1 = prompt("O seu número é PAR? (Digite 1 para sim e 0 para não)");
+
+// 1º PERGUNTA - RESPOSTA "SIM'"
+    if(pergunta1 == 1) { 
+	    alert("Hah! Comecei bem. Ainda tenho 4 perguntas, viu? Vamos pra próxima.")
+    // PERGUNTA 1.2 -  O NÚMERO SÓ PODE SER 2, 4, 6, 8 ou 10
+           var pergunta1_2 = prompt("O seu número possui dois algarismos? (Digite 1 para sim e 0 para não)")
+
+           //1.2 - RESPOSTA "SIM" - O NÚMERO É 10
+              if(pergunta1_2 == 1) {
+              	alert("OPA! Nesse caso, já sei em qual número você pensou. Foi o número 10!!! Eu sou muito bom. Essa foi em tempo recorde. :)")
+              }
+
+              else { //1.2 - RESPOSTA "NÃO" - O NÚMERO SÓ PODE SER 2, 4, 6, 8
+              	alert("Hum... Ok. Deixa eu pensar um pouco antes da próxima pergunta... Ainda tenho 3 restantes.")
+
+             //PERGUNTA 1.3 
+                var pergunta1_3 = prompt("Ok, vamos lá. O seu número é MAIOR que 4? (Digite 1 para sim e 0 para não)")
+                // 1.3 - RESPOSTA "SIM" - SÓ PODE SER 6 OU 8.
+                   if(pergunta1_3 == 1) {
+                   	  alert("Tô chegando perto... Mas só tenho 2 perguntas restantes. Vamos pra próxima.")
+                   	  //PERGUNTA 1.4
+                   	     var pergunta1_4 = prompt("O seu número é MENOR que 8? (Não preciso te lembrar que vc precisa digitar 1 para sim e 0 para não, né?)")
+                   	        if(pergunta1_4 == 1) { // 1.4 - RESPOSTA "SIM" - SÓ PODE SER 6
+                   	        	alert("JÁ SEI! Você pensou no número 6, né? He,he,he! Eu sou O CARA! :D")
+                   	        } // 1.4 - RESPOSTA "NÃO" - SÓ PODE SER 8
+
+                   	        else{
+                   	        alert("JÁ SEI! Você pensou no número 8. Essa demorou um pouco, mas eu ganhei mesmo assim. Hehehe!")	
+                   	        } 
+
+
+                   } // 1.3 - RESPOSTA "NÃO" - SÓ PODE SER 2 OU 4.
+                   else {
+                   	 alert("Hum... Certo... Preciso pensar um pouco. Mas ainda faltam duas perguntas, hein?")
+                   	 var pergunta1_5 = prompt("O seu número é MENOR que 4? (Não preciso te lembrar que vc precisa digitar 1 para sim e 0 para não, né?)")
+                   	     if(pergunta1_5 == 1) { // NESSE CASO, SÓ PODE SER O NÚMERO 2.
+                   	     	alert("Já sei! Você pensou no número 2. Essa foi fácil demais. ;)")
+
+                   	     }
+                   	     else { // NESSE CASO, SÓ PODE SER O NÚMERO 4.
+                   	     	alert("Ah... Então eu já sei. Você pensou no número 4. Ha,ha,ha! Eu sou bom demais!!!")
+
+                   	     }
+                   }
+
+
+
+              }
+	}
+	else { // 1º PERGUNTA - RESPOSTA "NÃO" - SÓ PODE SER 1, 3, 5, 7, 9
+	    alert("Não? Sério? Geralmente pensam em um número par. Mas você é mais esperto, né? Certo... Vamos pra próxima. Ainda faltam 4, viu?")
+	//2º PERGUNTA 
+	var pergunta2 = prompt("O seu número é múltiplo de 3? (Digite 1 para sim e 0 para não.")
+	   
+	   if(pergunta2 == 1) { //NESSE CASO, SÓ PODE SER 3 OU 9.
+	   	alert("Acho que estou chegando perto... E ainda faltam 3 perguntas!")
+	   	   //PERGUNTA 2.1 
+	   	   var pergunta2_1 = prompt("O seu número é MENOR que 9? (Não preciso te lembrar que vc precisa digitar 1 para sim e 0 para não, né?)")
+	   	      if(pergunta2_1==1) {//NESSE CASO, SÓ PODE SER 3.
+	   	      	alert("RÁÁÁ! TE PEGUEI! Você pensou no número 3, eu tenho certeza!!! Sou o melhor nesse jogo. :)")
+
+	   	      }
+	   	      else{//NESSE CASO, SÓ PODE SER 9.
+	   	      	alert("OPA, OPA! Já sei. Você pensou no número 9. Também conhecido como 6 de cabeça pra baixo. Ninguém ganha de mim nesse jogo. ;)")
+
+	   	      }
+
+	   }
+	   else { //NESSE CASO, SÓ PODE SER 1, 5 OU 7.
+	   	alert("Nossa, você é bom hein " + nome + "? Mas ainda tenho 3 perguntas. Eu VOU descobrir.")
+
+	   	  var pergunta2_2 = prompt("O seu número é MAIOR que 5? (Vc já sabe como é. 1 pra SIM, 0 pra NÃO.)")
+	   	  if(pergunta2_2==1) { // NESSE CASO, SÓ PODE SER O NÚMERO 7.
+	   	  	alert("Tive que pensar um pouco, mas agora já sei a resposta! Você pensou no número 7. Ah, muleque! EU SOU FERA!")
+
+	   	  }
+	   	  else { //NESSE CASO, AINDA PODE SER O 1 OU O 5.
+	   	  	alert("Estou começando a ficar preocupado... Só me sobraram 2 perguntas. Mas vamos lá... Eu vou ganhar.")
+	   	  	   var pergunta2_3 = prompt("O seu número é MAIOR que 1? (1 pra sim, 0 pra não...)")
+	   	  	      if(pergunta2_3 == 1) { //NESSE CASO, SÓ PODE SER O 5
+	   	  	      	alert("Você foi bom, mas eu fui melhor. VOCÊ PENSOU NO NÚMERO 5!!! Acertei, né? Eu sempre acerto. :)")
+
+	   	  	      }
+	   	  	      else { //NESSE CASO, SÓ PODE SER O NÚMERO 1.
+	   	  	      	alert("Você foi bom, mas eu fui melhor. VOCÊ PENSOU NO NÚMERO 1!!! I'am the champion!!!")
+
+
+	   	  	      }
+	   	  }
+
+	   }
+	      }
+
+	
+
+//FIM DO JOGO - EXIBE MENSAGEM NA TELA
+text("Não se sinta mal por ter perdido, " + nome + ". <br>A verdade é que eu fui programado pra fazer as perguntas certas, e dessa forma, SEMPRE ganhar no final.<br>Não se zangue comigo, eu sou só um código javascript. Fique zangado com quem me programou!!!");
+jump();
+text("Caso queira jogar novamente, é só apertar F5.");
+
+
+</script>

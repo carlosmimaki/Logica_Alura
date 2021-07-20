@@ -1,0 +1,70 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br>");
+        document.write("<br>");
+
+}
+
+    function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+}
+
+var pesoFlavio = 73;
+var alturaFlavio = 1.71;
+var imcFlavio = pesoFlavio / (alturaFlavio * alturaFlavio);
+mostra("O imc do Flávio é " + imcFlavio);
+
+
+var pesoAmigo = 68;
+var alturaAmigo = 1.72;
+var imcAmigo = pesoAmigo / (alturaAmigo * alturaAmigo);
+mostra("O imc do meu amigo é " + imcAmigo); 
+
+</script>
+
+<!-- Abaixo uma forma diferente de atribuir a função -->
+
+<script>
+
+<!--uma função sem parâmetros-->
+
+    function pulaLinha() {
+
+        document.write("<br>");
+        document.write("<br>");
+
+}
+
+<!--uma função com apenas um parâmetro-->
+
+    function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+}
+
+<!--uma função com dois parâmetros-->
+
+	function calculaImc(peso, altura) {
+
+		var imc = peso / (altura* altura);
+		mostra("O imc calculado é " + imc);
+}
+
+var pesoFlavio = 73;
+var alturaFlavio = 1.71;
+calculaImc(73, 1.71);
+
+var pesoAmigo = 68;
+var alturaAmigo = 1.72;
+calculaImc(68, 1.72);
+
+
+
+</script>

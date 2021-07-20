@@ -1,0 +1,42 @@
+<meta charset="UTF-8">
+
+<script>
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+    }
+
+    function calculaImc(altura, peso) {
+
+        return peso / ( altura * altura );
+    }
+
+    mostra("O meu IMC é " + calculaImc(1.63, 48));
+
+</script>
+
+<!-- Alguns alunos disseram que o código não funcionaria e que ela deveria fazer da seguinte forma: -->
+
+<script>
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+    }
+
+    function calculaImc(altura, peso) {
+
+        return peso / ( altura * altura );
+    }
+
+    var imcCalculado = calculaImc(1.63, 48);
+    mostra("O meu IMC é " + imcCalculado);
+
+</script>
+
+<!-- O que Kellen fez foi concatenar o texto "O meu IMC é " com uma função. É importante entender que a concatenação não é feita com a função, mas sim com seu retorno. Por exemplo, se a função retornar 25, será esse o valor concatenado com o texto. Isto é, uma sintaxe completamente válida. -->

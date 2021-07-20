@@ -1,0 +1,54 @@
+<meta charset="UTF-8">
+
+<script>
+    // FUNÇÃO DE QUEBRA DE LINHA
+    function jump() {
+
+        document.write("<br>");    
+        document.write("<br>");    
+    }
+    // FUNÇÃO DE EXIBIR TEXTO
+    function text(x) {
+
+        document.write(x);
+        jump();
+    }
+
+// EXERCÍCIO DE SIMULAÇÃO DE TELA DE LOG-IN
+
+var usuarioCadastro = "athos";
+var senhaCadastro = 990077;
+var tentativas = 3; 
+
+
+while(tentativas > 0)
+{
+    var usuario = prompt("Digite o usuário: ");
+
+     if(usuario==usuarioCadastro){
+       var senha = prompt("Digite a senha: ");
+          if(senha==senhaCadastro){
+
+            alert("Log-in feito com sucesso! Bem-vindo, Athos.")
+            break;
+
+    }
+       else{
+        var tentativas = tentativas - 1;
+              alert("Senha incorreta. Você possui " + tentativas + " tentativas restantes.");
+}
+
+}
+       else{
+          var tentativas = tentativas - 1; 
+             alert("Usuário incorreto. Você possui " + tentativas + " tentativas restantes.")
+}
+
+}
+
+if(tentativas <= 0){
+    text("Você não possui mais tentativas. Log-in bloqueado!");
+
+}
+
+</script>

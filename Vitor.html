@@ -1,0 +1,202 @@
+Vitor,
+
+você pode converter a resposta para maiúscula ou minúscula, usando toLowerCase() ou toUpperCase(). Seu código ficaria assim (só acresentei ao final a invocação da function, e corrigi o 'j' por 'g'):
+
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    function escreve(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    function interageComUsuario() {
+
+        var perguntaDoRamo = prompt("Você é do ramo? Por favor, responda com S ou N.").toLowerCase();
+
+        if(perguntaDoRamo == "s") {
+            var porcentagemUsuario = parseInt(prompt("Por favor, digite seu progresso."));
+            while(isNaN(porcentagemUsuario)) {
+                var porcentagemUsuario = parseInt(prompt("Digite um número válido."));
+            }
+            if(porcentagemUsuario >= 0 && porcentagemUsuario <=100) {
+                escreve("<h1><u>Você progrediu " + porcentagemUsuario + "%</u></h1>");
+            } else {
+                pulaLinha();
+                pulaLinha();
+                escreve("<u><b>Sua porcentagem é inválida.</b></u>")
+            }
+        }
+
+        if(perguntaDoRamo == "n") {
+            pulaLinha();
+            pulaLinha();
+            escreve("<u><b>Você não faz parte.</b></u>");
+        }
+    }
+
+    interageComUsuario();
+
+</script>COPIAR CÓDIGO
+A resposta, se for maiúscula, será convertida para minúscula. Se já for minúscula, continua como está.
+
+SOLUÇÃO
+
+Akashi (121.1k xp, 160 posts)
+2 horas atrás
+Vitor,
+
+desculpe, dei uma resposta que resolve melhor seu problema, mas não respondi sua dúvida. O código com array poderia ficar assim:
+
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    function escreve(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    function interageComUsuario() {
+
+        var respostas = ["s", "S", "n", "N"];
+
+        var perguntaDoRamo = prompt("Você é do ramo? Por favor, responda com S ou N.");
+
+        if(perguntaDoRamo == respostas[0] || perguntaDoRamo == respostas[1]) {
+            var porcentagemUsuario = parseInt(prompt("Por favor, digite seu progresso."));
+            while(isNaN(porcentagemUsuario)) {
+                var porcentagemUsuario = parseInt(prompt("Digite um número válido."));
+            }
+            if(porcentagemUsuario >= 0 && porcentagemUsuario <=100) {
+                escreve("<h1><u>Você progrediu " + porcentagemUsuario + "%</u></h1>");
+            } else {
+                pulaLinha();
+                pulaLinha();
+                escreve("<u><b>Sua porcentagem é inválida.</b></u>")
+            }
+        }
+
+        if(perguntaDoRamo == respostas[2] || perguntaDoRamo == respostas[3]) {
+            pulaLinha();
+            pulaLinha();
+            escreve("<u><b>Você não faz parte.</b></u>");
+        }
+    }
+
+    interageComUsuario();
+
+</script>COPIAR CÓDIGO
+Uma outra alternativa, seria manter seu código original, mas aceitando as quatro respostas em 'ifs' 'ou lógico' sem o array:
+
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    function escreve(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    function interageComUsuario() {
+
+        var perguntaDoRamo = prompt("Você é do ramo? Por favor, responda com S ou N.");
+
+        if(perguntaDoRamo == "s" || perguntaDoRamo == "S") {
+            var porcentagemUsuario = parseInt(prompt("Por favor, digite seu progresso."));
+            while(isNaN(porcentagemUsuario)) {
+                var porcentagemUsuario = parseInt(prompt("Digite um número válido."));
+            }
+            if(porcentagemUsuario >= 0 && porcentagemUsuario <=100) {
+                escreve("<h1><u>Você progrediu " + porcentagemUsuario + "%</u></h1>");
+            } else {
+                pulaLinha();
+                pulaLinha();
+                escreve("<u><b>Sua porcentagem é inválida.</b></u>")
+            }
+        }
+
+        if(perguntaDoRamo == "n" || perguntaDoRamo == "N") {
+            pulaLinha();
+            pulaLinha();
+            escreve("<u><b>Você não faz parte.</b></u>");
+        }
+    }
+
+    interageComUsuario();
+
+</script>COPIAR CÓDIGO
+Acho a primeira mais 'elegante'.
+
+
+Akashi (121.1k xp, 160 posts)
+2 horas atrás
+Vitor,
+
+outra alternativa com array. Está exemplificado com seu código, mas é boa para questões que tenham várias respostas que se enquadrem juntas. Coloquei aqui letras próximas que o usuário pode teclar errado:
+
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    function escreve(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    function interageComUsuario() {
+
+        var respostasSim = ["s", "S", "a", "A", "x", "X", "w", "W", "Q", "q", "e", "E", "d", "D", "z", "Z", "C", "c"];
+        var respostasNao = ["n", "N", "b", "B", "m", "M", "g", "G", "h", "H", "j", "J"," "];
+
+        var perguntaDoRamo = prompt("Você é do ramo? Por favor, responda com S ou N.");
+
+
+        for(var i = 0; i < respostasSim.length; i++) {
+
+            if(perguntaDoRamo == respostasSim[i]) {
+                var porcentagemUsuario = parseInt(prompt("Por favor, digite seu progresso."));
+                while(isNaN(porcentagemUsuario)) {
+                    var porcentagemUsuario = parseInt(prompt("Digite um número válido."));
+                }
+                if(porcentagemUsuario >= 0 && porcentagemUsuario <=100) {
+                    escreve("<h1><u>Você progrediu " + porcentagemUsuario + "%</u></h1>");
+                } else {
+                    pulaLinha();
+                    pulaLinha();
+                    escreve("<u><b>Sua porcentagem é inválida.</b></u>")
+                }
+            }
+        }
+
+
+        for(var i = 0; i < respostasNao.length; i++) {
+
+            if(perguntaDoRamo == respostasNao[i]) {
+                pulaLinha();
+                pulaLinha();
+                escreve("<u><b>Você não faz parte.</b></u>");
+            }
+        }
+    }
+
+    interageComUsuario();
+
+</script>

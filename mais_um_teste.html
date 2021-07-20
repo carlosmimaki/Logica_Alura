@@ -1,0 +1,26 @@
+<meta charset="UTF-8">
+
+<button>Clique-me</button>
+
+<script>
+    function tchau() {
+
+        alert("Tchau!!!!!")
+    }
+
+    var button = document.querySelector("button");
+    button.onclick = tchau;
+
+</script>
+
+<!-- Aprendemos que é através de document.querySelector que buscamos um elemento (TAG) no mundo HTML e o trazemos para o mundo JavaScript. No caso, é através da variável button, aquela que recebeu o retorno de document.querySelector que temos acesso à TAG <button>. Existem outros termos técnicos para tudo o que aconteceu aqui, mas eles não nos ajudam com lógica de programação.
+
+Muito bem, agora que temos o botão, se quisermos que ele chame a função tchau quando for clicado, precisamos associar a função ao botão atribuindo a função à button.onclick. Mas cuidado, você deve fazer:
+
+    button.onclick = tchau;COPIAR CÓDIGO
+E não
+
+    button.onclick = tchau();COPIAR CÓDIGO
+Este último chama a função tchau e como ela não retorna nada, o valor de button.onclick será undefined. Além disso, como foram usados os () na chamada da função, ela será executada antes mesmo de clicarmos no botão. É por isso que fazemos:
+
+    button.onclick = tchau;COPIAR CÓDIGO -->

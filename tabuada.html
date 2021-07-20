@@ -1,0 +1,46 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+    document.write("<br>");
+    document.write("<br>");
+}
+
+function mostra(frase) {
+
+    document.write(frase);
+    pulaLinha();
+}
+
+// var multiplicador = 1;
+
+// for(espaço1; espaço2; espaço3)
+
+// A estrutura do for() possui a mesma funcionalidade do while(), com a diferença de que ela é divida em três partes. A primeira é uma variável para inicializá-lo, a que será incrementada, o segundo contém a condição de repetição, a última parte do for() é o incremento da variável multiplicador, declarada no espaço1. Vamos salvar e recarregar a página. Teremos o mesmo resultado:
+
+for(var multiplicador = 1; multiplicador <= 10; multiplicador = multiplicador + 1)
+
+// for(var multiplicador = 1; multiplicador <= 10; multiplicador++) ISTO SE CHAMA PÓS INCREMENTO
+
+ {
+
+    mostra(7 * multiplicador);
+    // multiplicador = multiplicador + 1
+
+}
+
+mostra("FIM");
+
+</script>
+
+<!-- Com o while(), o mesmo resultado é obtido da seguinte forma:
+
+var multiplicador = 1;
+
+while(multiplicador <= 10) {
+
+    mostra(7 * multiplicador);
+    multiplicador = multiplicador + 1;
+} -->

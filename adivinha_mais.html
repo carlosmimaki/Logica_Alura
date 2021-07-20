@@ -1,0 +1,47 @@
+<meta charset="UTF-8">
+
+
+<input/>
+
+<button>Compare com o meu segredo</button>
+
+<script>
+
+	var segredo = 5;
+
+
+	var input = document.querySelector("input");
+    
+    function verifica() {
+
+        if(input.value == segredo) {
+
+        alert("Você ACERTOU!");
+        } else {
+
+        alert("Você ERROU!!!!!!!!");
+        }
+
+    }
+
+    var button = document.querySelector("button");
+
+    button.onclick = verifica;
+
+    // button.onclick = verifica();
+
+
+</script>
+
+<!-- //     Surgirá um pop up imediatamente, o que não é o resultado desejado. Isso acontece pois, da maneira como declaramos, o onclick recebe verifica(), mas quando utilizamos os parênteses estamos chamando a função, portanto ela é que será executada ao recarregar a página.
+
+// É necessário fazer com que o verifica() esteja inserido no onclick. Retornaremos ao navegador e abriremos o console. Digitaremos:
+// Ao fazermos isso, é exibido o código da função. Assim, há uma grande diferença entre utilizar os parênteses, ou seja, executar a função, e não utilizá-los, situação em que teremos acesso ao código da função. Para solucionarmos isto, retornaremos ao código e, quando formos remover os parênteses do verifica() em button.onclick, teremos:
+// Dessa forma, toda a informação contida em verifica, isto é, o código, está vinculado ao onclick do botão. Assim, ele estará preparado para executar a verificação sempre que o botão for clicado.
+ -->
+
+
+<!-- Utilizaremos a querySelector() para inserir aquilo que está no mundo HTML na variável input. Ela receberá como parâmetro o nome da tag que desejamos utilizar: 
+Isso permite trabalharmos com o <input> no universo JavaScript. O nome da variável não importa, podemos escolher qualquer um, apenas precisamos nos atentar ao nome da tag, que deve ser passado exatamente como é para o querySelector() poder acessá-lo. No caso, chamaremos a variável de input apenas por motivos didáticos.
+
+Para sabermos qual o valor que está inserido na variável, utilizaremos o input.value:-->

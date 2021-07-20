@@ -1,0 +1,65 @@
+<meta charset="UTF-8">
+
+<script>
+	
+	function pulaLinha() {
+		document.write("<br>");
+	}
+	
+	function escreve(frase) {
+		document.write(frase);
+		pulaLinha();
+	}
+		
+	function interajeComUsuario() {
+			var perguntaDoRamo = prompt("Você é do ramo sênior da Tropa Ártico? Por favor, responda com S ou N.");
+		if(perguntaDoRamo == "S") {
+			var porcentagemUsuario = parseInt(prompt("Por favor, digite seu progresso do Escoteiro da Pátria"));
+				while(isNaN(porcentagemUsuario)) {
+					var porcentagemUsuario = parseInt(prompt("Digite um número válido."));
+					}
+				if(porcentagemUsuario >= 0 && porcentagemUsuario <=100) {
+					escreve("<h1><u>Você progrediu " + porcentagemUsuario + "%</u></h1>");
+					quebra();
+					} else {
+						pulaLinha();
+						pulaLinha();
+						escreve("<u><b>Sua porcentagem é inválida.</b></u>")
+			}
+		}
+		if(perguntaDoRamo == "N") {
+			pulaLinha();
+			pulaLinha();
+			escreve("<u><b>Você não faz parte da Tropa.</b></u>");
+			}
+		if(perguntaDoRamo == "s") {
+			var porcentagemUsuario = parseInt(prompt("Por favor, digite seu progresso do Escoteiro da Pátria"));
+				while(isNaN(porcentagemUsuario)) {
+					var porcentagemUsuario = parseInt(prompt("Digite um número válido."));
+					}
+				if(porcentagemUsuario >= 0 && porcentagemUsuario <=100) {
+					escreve("<h1><u>Você progrediu " + porcentagemUsuario + "%</u></h1>");
+					quebra();
+					}  else {
+						pulaLinha();
+						pulaLinha();
+						escreve("<u><b>Sua porcentagem é inválida.</b></u>")
+			}
+		}
+		if(perguntaDoRamo == "n") {
+			pulaLinha();
+			pulaLinha();
+			escreve("<u><b>Você não faz parte da Tropa.</b></u></center>");
+		}
+	}
+	
+	var escoteiroDaPatria = 100;
+	var porcentagemAtualVitor = 54;
+	var tempoPrevistoNoRamo = 4;
+	
+	pulaLinha(); 
+	escreve("<center><dd><b><h2>A Tropa Ártico decidiu fazer uma média entre o desenvolvimento de seus sêniors para definir o progresso de suas experiências.</b></h2>");
+	escreve("<big><b>Vitor</b> foi o primeiro a divulgar sua porcentagem: <b><u>" + porcentagemAtualVitor + "%</u></b>");
+	escreve("Ele conquistou sua porcentagem em apenas <b><u>um único ano.</u></b></big>");
+	interajeComUsuario();
+</script>
